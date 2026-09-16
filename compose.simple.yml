@@ -1,0 +1,7 @@
+services:
+  chess:
+    image: chess:latest
+    container_name: chess
+    build: .
+    ports:
+      - '8081:80'

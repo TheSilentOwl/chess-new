@@ -1,0 +1,13 @@
+services:
+  chess:
+    image: chess:latest
+    container_name: chess
+    build: .
+    ports:
+      - '8081:80'
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

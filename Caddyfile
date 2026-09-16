@@ -1,0 +1,13 @@
+:80 {
+	root * /srv
+	encode gzip
+
+	# Required for the Stockfish engine worker: it uses shared WebAssembly
+	# memory, which browsers only allow on a cross-origin isolated page.
+	header {
+		Cross-Origin-Opener-Policy same-origin
+		Cross-Origin-Embedder-Policy require-corp
+	}
+
+	file_server
+}

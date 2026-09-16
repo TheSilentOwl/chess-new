@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess</title>
+  </head>
+  <body>
+    <div class="app">
+      <nav class="navbar">
+        <div class="brand">Chess</div>
+        <div class="status">
+          <span id="turnDot" class="turn-dot"></span>
+          <span id="turnText" class="turn-text">White's turn</span>
+        </div>
+        <div class="navbar-actions">
+          <button class="btn" type="button" id="botToggleBtn">Bot: Off</button>
+          <button class="btn btn-primary" type="button" id="newGameBtn">New Game</button>
+        </div>
+      </nav>
+      <div class="layout">
+        <div id="board-container">
+          <div id="board-grid">
+            <div class="coords coords-files coords-files-top">
+              <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span>
+            </div>
+            <div class="coords coords-ranks coords-ranks-left">
+              <span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>
+            </div>
+            <div id="board-frame">
+              <div id="gameOverOverlay" class="overlay game-over-overlay" hidden>
+                <div class="game-over-card">
+                  <div id="gameOverText"></div>
+                  <button class="btn btn-primary" type="button" id="rematchBtn">Rematch</button>
+                </div>
+              </div>
+            </div>
+            <div class="coords coords-ranks coords-ranks-right">
+              <span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>
+            </div>
+            <div class="coords coords-files coords-files-bottom">
+              <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span>
+            </div>
+          </div>
+        </div>
+        <aside class="panel">
+          <div class="panel-header">
+            <h2>Moves</h2>
+            <div class="export-actions">
+              <button class="btn" type="button" id="exportPgnBtn">PGN</button>
+              <button class="btn" type="button" id="exportFenBtn">FEN</button>
+            </div>
+          </div>
+          <ol id="moveList" class="move-list"></ol>
+        </aside>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
