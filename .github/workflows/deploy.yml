@@ -12,10 +12,10 @@ jobs:
     runs-on: self-hosted
 
 
-  steps:
-    - name: Deploy Chess
-      run: |
-        cd /var/www/chess-new
-        git pull origin main
-        docker compose -f compose.simple.yml up -d --build
+    steps:
+      - name: Deploy Chess
+        run: |
+          cd /var/www/chess-new
+          git pull origin main
+          docker compose -f compose.simple.yml up -d --build
 
